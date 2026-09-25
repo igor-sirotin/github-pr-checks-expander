@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub PR Checks Expander",
+  "version": "1.0.0",
+  "description": "Shows every CI job in a GitHub pull request's checks list at once, with no inner scrollbar.",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "css": ["expand-checks.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "github-pr-checks-expander@sirotin",
+      "strict_min_version": "109.0"
+    }
+  }
+}
