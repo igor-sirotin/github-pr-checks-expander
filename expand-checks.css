@@ -1,5 +1,5 @@
 /* React merge box: checks, reviewers and other expandable sections. */
-[data-testid="mergebox-partial"] [class*="MergeBoxExpandable-module__expandableContent"] {
+[data-testid="mergebox-partial"] [class*="expandableContent__"] {
   max-height: none !important;
   overflow-y: visible !important;
 }
@@ -11,7 +11,10 @@
 }
 
 /* Commit status popovers (the check / cross icon next to a commit). */
-[class*="ChecksStatusBadgeFooter-module__Box"],
+ul:has(> li[data-testid="check-run-item"]) {
+  max-height: 80vh !important;
+}
+
 .commit-build-statuses .dropdown-menu .merge-status-list {
   max-height: 80vh !important;
 }
