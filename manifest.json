@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "GitHub PR Checks Expander",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shows every CI job in a GitHub pull request's checks list at once, with no inner scrollbar.",
   "content_scripts": [
     {

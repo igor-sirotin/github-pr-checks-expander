@@ -34,4 +34,4 @@ zip -r github-pr-checks-expander.zip manifest.json expand-checks.css
 
 ## If it stops working
 
-GitHub's React UI uses hashed CSS module class names such as `MergeBoxExpandable-module__expandableContent__xCBlh`. The stylesheet matches them by prefix (`[class*="MergeBoxExpandable-module__expandableContent"]`), so hash changes don't break it, but a component rename would. In that case, inspect the checks list in DevTools, find the element with `max-height` and `overflow-y: auto`, and update the selector in `expand-checks.css`.
+GitHub's React UI uses hashed CSS module class names. Their format has changed before (`MergeBoxExpandable-module__expandableContent__xCBlh` became `expandableContent__0_lr6T`), so the stylesheet matches only the stable part of the name (`[class*="expandableContent__"]` inside `[data-testid="mergebox-partial"]`) and, where possible, `data-testid` attributes instead of classes. A component rename can still break it. In that case, inspect the checks list in DevTools, find the element with `max-height` and `overflow-y: auto`, and update the selector in `expand-checks.css`.
